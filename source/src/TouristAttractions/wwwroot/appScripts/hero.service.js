@@ -16,6 +16,10 @@ var HeroService = (function () {
     HeroService.prototype.getHeroes = function () {
         return Promise.resolve(mock_heroes_1.HEROES);
     };
+    HeroService.prototype.getHero = function (id) {
+        return this.getHeroes()
+            .then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
+    };
     HeroService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
@@ -23,4 +27,3 @@ var HeroService = (function () {
     return HeroService;
 }());
 exports.HeroService = HeroService;
-//# sourceMappingURL=hero.service.js.map
