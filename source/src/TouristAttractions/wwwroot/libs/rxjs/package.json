@@ -2,7 +2,7 @@
   "_args": [
     [
       "rxjs@5.0.0-beta.6",
-      "D:\\Projects\\tourist-attractions\\TouristAttractions\\src\\TouristAttractions"
+      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions"
     ]
   ],
   "_from": "rxjs@5.0.0-beta.6",
@@ -36,7 +36,7 @@
   "_shasum": "cb6dc46d6ddfedfeefc9b15dafd09c34a4370d23",
   "_shrinkwrap": null,
   "_spec": "rxjs@5.0.0-beta.6",
-  "_where": "D:\\Projects\\tourist-attractions\\TouristAttractions\\src\\TouristAttractions",
+  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions",
   "author": {
     "email": "blesh@netflix.com",
     "name": "Ben Lesh"

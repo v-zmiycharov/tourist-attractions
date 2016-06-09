@@ -9,12 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var mock_heroes_1 = require('./mock-heroes');
+var http_1 = require('@angular/http');
+var Rx_1 = require('rxjs/Rx');
+require('rxjs/add/operator/map');
 var HeroService = (function () {
-    function HeroService() {
+    function HeroService(http) {
+        this.http = http;
+        this.heroesUrl = '/api/heroes'; // URL to web API
     }
     HeroService.prototype.getHeroes = function () {
-        return Promise.resolve(mock_heroes_1.HEROES);
+        return this.http.get(this.heroesUrl)
+            .map(this.extractData)
+            .catch(this.handleError)
+            .toPromise();
+    };
+    HeroService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body || {};
+    };
+    HeroService.prototype.handleError = function (error) {
+        // In a real world app, we might use a remote logging infrastructure
+        // We'd also dig deeper into the error to get a better message
+        var errMsg = (error.message) ? error.message :
+            error.status ? error.status + " - " + error.statusText : 'Server error';
+        console.error(errMsg); // log to console instead
+        return Rx_1.Observable.throw(errMsg);
     };
     HeroService.prototype.getHero = function (id) {
         return this.getHeroes()
@@ -22,7 +41,7 @@ var HeroService = (function () {
     };
     HeroService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], HeroService);
     return HeroService;
 }());

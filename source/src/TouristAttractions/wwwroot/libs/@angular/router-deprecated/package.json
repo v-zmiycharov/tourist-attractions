@@ -2,7 +2,7 @@
   "_args": [
     [
       "@angular/router-deprecated@2.0.0-rc.1",
-      "D:\\Projects\\tourist-attractions\\TouristAttractions\\src\\TouristAttractions"
+      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions"
     ]
   ],
   "_from": "@angular/router-deprecated@2.0.0-rc.1",
@@ -35,7 +35,7 @@
   "_shasum": "d87e0ae97d62a9ecc63279ead33fbbd1476ea572",
   "_shrinkwrap": null,
   "_spec": "@angular/router-deprecated@2.0.0-rc.1",
-  "_where": "D:\\Projects\\tourist-attractions\\TouristAttractions\\src\\TouristAttractions",
+  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions",
   "author": {
     "name": "angular"
   },
