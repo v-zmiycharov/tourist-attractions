@@ -37,5 +37,35 @@ namespace TouristAttractions.Controllers
         {
             return Heroes.FirstOrDefault(e => e.Id == id);
         }
+
+        // POST api/heroes
+        [HttpPost]
+        public Hero Post([FromBody]Hero hero)
+        {
+            if (!String.IsNullOrWhiteSpace(hero.Name))
+            {
+                hero.Id = Heroes.Last().Id + 1;
+                Heroes.Add(hero);
+                return hero;
+            }
+            else
+                throw new Exception("Invalid data");
+        }
+
+        // PUT api/heroes/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]Hero hero)
+        {
+            Hero heroToUpdate = Heroes.FirstOrDefault(e => e.Id == id);
+
+            heroToUpdate.Name = hero.Name;
+        }
+
+        // DELETE api/heroes/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            Heroes.Remove(Heroes.FirstOrDefault(e => e.Id == id));
+        }
     }
 }
