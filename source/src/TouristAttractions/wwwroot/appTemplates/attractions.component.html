@@ -1,0 +1,19 @@
+﻿<h2>My Attractions</h2>
+<ul class="attractions">
+    <li *ngFor="let attraction of attractions" (click)="onSelect(attraction)" [class.selected]="attraction === selectedAttraction">
+        <span class="attraction-element">
+            <span class="badge">{{attraction.id}}</span> {{attraction.name}}
+        </span>
+        <button class="delete-button" (click)="delete(attraction, $event)">Delete</button>
+    </li>
+</ul>
+<button (click)="addAttraction()">Add New Attraction</button>
+<div *ngIf="addingAttraction">
+    <my-attraction-detail (close)="close($event)"></my-attraction-detail>
+</div>
+<div *ngIf="selectedAttraction">
+    <h2>
+        {{selectedAttraction.name | uppercase}} is my attraction
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>

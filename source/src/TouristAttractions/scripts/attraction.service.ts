@@ -1,18 +1,18 @@
 ﻿import { Injectable } from '@angular/core';
 
 import { Http, Response, Headers } from '@angular/http';
-import { Hero }     from './hero';
+import { Attraction }     from './attraction';
 
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class HeroService {
+export class AttractionService {
     constructor(private http: Http) { }
-    private heroesUrl = '/api/heroes';  // URL to web API
+    private attractionsUrl = '/api/attractions';  // URL to web API
 
 
-    getHeroes(): Promise<Hero[]> {
-        return this.http.get(this.heroesUrl)
+    getAttractions(): Promise<Attraction[]> {
+        return this.http.get(this.attractionsUrl)
             .toPromise()
             .then(response => response.json())
             .catch(this.handleError);
@@ -24,44 +24,44 @@ export class HeroService {
     }
 
 
-    getHero(id: number) {
-        return this.getHeroes()
-            .then(heroes => heroes.filter(hero => hero.id === id)[0]);
+    getAttraction(id: number) {
+        return this.getAttractions()
+            .then(attractions => attractions.filter(attraction => attraction.id === id)[0]);
     }
     
-    // Add new Hero
-    private post(hero: Hero): Promise<Hero> {
+    // Add new Attraction
+    private post(attraction: Attraction): Promise<Attraction> {
         let headers = new Headers({
             'Content-Type': 'application/json'
         });
 
         return this.http
-            .post(this.heroesUrl, JSON.stringify(hero), { headers: headers })
+            .post(this.attractionsUrl, JSON.stringify(attraction), { headers: headers })
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);
     }
 
-    // Update existing Hero
-    private put(hero: Hero) {
+    // Update existing Attraction
+    private put(attraction: Attraction) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        let url = `${this.heroesUrl}/${hero.id}`;
+        let url = `${this.attractionsUrl}/${attraction.id}`;
 
         return this.http
-            .put(url, JSON.stringify(hero), { headers: headers })
+            .put(url, JSON.stringify(attraction), { headers: headers })
             .toPromise()
-            .then(() => hero)
+            .then(() => attraction)
             .catch(this.handleError);
     }
 
-    // Delete hero
-    delete(hero: Hero) {
+    // Delete attraction
+    delete(attraction: Attraction) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        let url = `${this.heroesUrl}/${hero.id}`;
+        let url = `${this.attractionsUrl}/${attraction.id}`;
 
         return this.http
             .delete(url, headers)
@@ -70,10 +70,10 @@ export class HeroService {
     }
 
     // Save = Post + Put
-    save(hero: Hero): Promise<Hero> {
-        if (hero.id) {
-            return this.put(hero);
+    save(attraction: Attraction): Promise<Attraction> {
+        if (attraction.id) {
+            return this.put(attraction);
         }
-        return this.post(hero);
+        return this.post(attraction);
     }
 }

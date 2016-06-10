@@ -1,8 +1,8 @@
 ﻿import { Component }       from '@angular/core';
-import { HeroService }     from './hero.service';
-import { HeroesComponent } from './heroes.component';
+import { AttractionService }     from './attraction.service';
+import { AttractionsComponent } from './attractions.component';
 import { DashboardComponent } from './dashboard.component';
-import { HeroDetailComponent } from './hero-detail.component';
+import { AttractionDetailComponent } from './attraction-detail.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 @Component({
@@ -11,7 +11,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
         <h1>{{title}}</h1>
         <nav>
             <a [routerLink]="['Dashboard']">Dashboard</a>
-            <a [routerLink]="['Heroes']">Heroes</a>
+            <a [routerLink]="['Attractions']">Attractions</a>
         </nav>
         <router-outlet></router-outlet>
     `,
@@ -19,15 +19,15 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
-        HeroService
+        AttractionService
     ]
 })
 
 @RouteConfig([
     {
-        path: '/heroes',
-        name: 'Heroes',
-        component: HeroesComponent
+        path: '/attractions',
+        name: 'Attractions',
+        component: AttractionsComponent
     },
     {
         path: '/dashboard',
@@ -37,11 +37,11 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
     },
     {
         path: '/detail/:id',
-        name: 'HeroDetail',
-        component: HeroDetailComponent
+        name: 'AttractionDetail',
+        component: AttractionDetailComponent
     },
 ])
 
 export class AppComponent {
-    title = 'Tour of Heroes';
+    title = 'Tour of Attractions';
 }
