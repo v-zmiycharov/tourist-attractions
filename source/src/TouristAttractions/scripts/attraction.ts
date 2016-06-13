@@ -1,7 +1,7 @@
 ﻿import { Section } from './section';
 
 export class Attraction {
-    id: number;
+    attractionId: number;
     name: string;
     longitude: number;
     latitude: number;

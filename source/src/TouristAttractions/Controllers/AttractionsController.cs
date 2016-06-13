@@ -24,18 +24,26 @@ namespace TouristAttractions.Controllers
             new Attraction(20, "Potala Palace", 29.6554988, 91.1163905, "Tibet", "China", new List<Section>() { new Section(1, "", "") } ),
         };
 
+        private AttractionsDbContext context;
+
+        public AttractionsController(AttractionsDbContext dbContext)
+        {
+            context = dbContext;
+        }
+
         // GET api/attractions
         [HttpGet]
         public IEnumerable<Attraction> Get()
         {
-            return Attractions;
+            var result = context.Attractions;
+            return result.ToList();
         }
 
         // GET api/attractions/5
         [HttpGet("{id}")]
         public Attraction Get(int id)
         {
-            return Attractions.FirstOrDefault(e => e.Id == id);
+            return Attractions.FirstOrDefault(e => e.AttractionId == id);
         }
 
         // POST api/attractions
@@ -44,7 +52,7 @@ namespace TouristAttractions.Controllers
         {
             if (!String.IsNullOrWhiteSpace(attraction.Name))
             {
-                attraction.Id = Attractions.Last().Id + 1;
+                attraction.AttractionId = Attractions.Last().AttractionId + 1;
                 Attractions.Add(attraction);
                 return attraction;
             }
@@ -56,7 +64,7 @@ namespace TouristAttractions.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]Attraction attraction)
         {
-            Attraction attractionToUpdate = Attractions.FirstOrDefault(e => e.Id == id);
+            Attraction attractionToUpdate = Attractions.FirstOrDefault(e => e.AttractionId == id);
 
             attractionToUpdate.Update(attraction);
         }
@@ -65,7 +73,7 @@ namespace TouristAttractions.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            Attractions.Remove(Attractions.FirstOrDefault(e => e.Id == id));
+            Attractions.Remove(Attractions.FirstOrDefault(e => e.AttractionId == id));
         }
     }
 }

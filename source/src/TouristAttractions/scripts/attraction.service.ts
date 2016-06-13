@@ -26,7 +26,7 @@ export class AttractionService {
 
     getAttraction(id: number) {
         return this.getAttractions()
-            .then(attractions => attractions.filter(attraction => attraction.id === id)[0]);
+            .then(attractions => attractions.filter(attraction => attraction.attractionId === id)[0]);
     }
     
     // Add new Attraction
@@ -47,7 +47,7 @@ export class AttractionService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        let url = `${this.attractionsUrl}/${attraction.id}`;
+        let url = `${this.attractionsUrl}/${attraction.attractionId}`;
 
         return this.http
             .put(url, JSON.stringify(attraction), { headers: headers })
@@ -61,7 +61,7 @@ export class AttractionService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        let url = `${this.attractionsUrl}/${attraction.id}`;
+        let url = `${this.attractionsUrl}/${attraction.attractionId}`;
 
         return this.http
             .delete(url, headers)
@@ -71,7 +71,7 @@ export class AttractionService {
 
     // Save = Post + Put
     save(attraction: Attraction): Promise<Attraction> {
-        if (attraction.id) {
+        if (attraction.attractionId) {
             return this.put(attraction);
         }
         return this.post(attraction);

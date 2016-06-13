@@ -27,7 +27,7 @@ export class AttractionsComponent implements OnInit {
     }
     onSelect(attraction: Attraction) { this.selectedAttraction = attraction; }
     gotoDetail() {
-        this.router.navigate(['AttractionDetail', { id: this.selectedAttraction.id }]);
+        this.router.navigate(['AttractionDetail', { id: this.selectedAttraction.attractionId }]);
     }
 
     addAttraction() {

@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
             .then(attractions => this.attractions = attractions.slice(1, 5));
     }
     gotoDetail(attraction: Attraction) {
-        let link = ['AttractionDetail', { id: attraction.id }];
+        let link = ['AttractionDetail', { id: attraction.attractionId }];
         this.router.navigate(link);
     }
 }

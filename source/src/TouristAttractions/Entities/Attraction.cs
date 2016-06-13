@@ -7,7 +7,7 @@ namespace TouristAttractions.Entities
 {
     public class Attraction
     {
-        public int Id { get; set; }
+        public int AttractionId { get; set; }
         public string Name { get; set; }
         public double Longitude { get; set; }
         public double Latitude { get; set; }
@@ -17,9 +17,9 @@ namespace TouristAttractions.Entities
 
         public Attraction() { }
 
-        public Attraction(int id, string name, double longitude, double latitude, string city, string country, List<Section> sections)
+        public Attraction(int attractionId, string name, double longitude, double latitude, string city, string country, List<Section> sections)
         {
-            this.Id = id;
+            this.AttractionId = attractionId;
             this.Name = name;
             this.Longitude = longitude;
             this.Latitude = latitude;

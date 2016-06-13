@@ -28,7 +28,7 @@ var AttractionService = (function () {
     };
     AttractionService.prototype.getAttraction = function (id) {
         return this.getAttractions()
-            .then(function (attractions) { return attractions.filter(function (attraction) { return attraction.id === id; })[0]; });
+            .then(function (attractions) { return attractions.filter(function (attraction) { return attraction.attractionId === id; })[0]; });
     };
     // Add new Attraction
     AttractionService.prototype.post = function (attraction) {
@@ -45,7 +45,7 @@ var AttractionService = (function () {
     AttractionService.prototype.put = function (attraction) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        var url = this.attractionsUrl + "/" + attraction.id;
+        var url = this.attractionsUrl + "/" + attraction.attractionId;
         return this.http
             .put(url, JSON.stringify(attraction), { headers: headers })
             .toPromise()
@@ -56,7 +56,7 @@ var AttractionService = (function () {
     AttractionService.prototype.delete = function (attraction) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        var url = this.attractionsUrl + "/" + attraction.id;
+        var url = this.attractionsUrl + "/" + attraction.attractionId;
         return this.http
             .delete(url, headers)
             .toPromise()
@@ -64,7 +64,7 @@ var AttractionService = (function () {
     };
     // Save = Post + Put
     AttractionService.prototype.save = function (attraction) {
-        if (attraction.id) {
+        if (attraction.attractionId) {
             return this.put(attraction);
         }
         return this.post(attraction);

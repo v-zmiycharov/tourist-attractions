@@ -27,7 +27,7 @@ var AttractionsComponent = (function () {
     };
     AttractionsComponent.prototype.onSelect = function (attraction) { this.selectedAttraction = attraction; };
     AttractionsComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['AttractionDetail', { id: this.selectedAttraction.id }]);
+        this.router.navigate(['AttractionDetail', { id: this.selectedAttraction.attractionId }]);
     };
     AttractionsComponent.prototype.addAttraction = function () {
         this.addingAttraction = true;

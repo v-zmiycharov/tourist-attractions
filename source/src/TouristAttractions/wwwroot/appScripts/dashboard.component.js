@@ -23,7 +23,7 @@ var DashboardComponent = (function () {
             .then(function (attractions) { return _this.attractions = attractions.slice(1, 5); });
     };
     DashboardComponent.prototype.gotoDetail = function (attraction) {
-        var link = ['AttractionDetail', { id: attraction.id }];
+        var link = ['AttractionDetail', { id: attraction.attractionId }];
         this.router.navigate(link);
     };
     DashboardComponent = __decorate([

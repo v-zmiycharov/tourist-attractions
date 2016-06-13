@@ -7,9 +7,11 @@ namespace TouristAttractions.Entities
 {
     public class Section
     {
+        public int SectionId { get; set; }
         public int OrderNum { get; set; }
         public string Header { get; set; }
         public string Content { get; set; }
+        public int AttractionId { get; set; }
 
         public Section() { }
 

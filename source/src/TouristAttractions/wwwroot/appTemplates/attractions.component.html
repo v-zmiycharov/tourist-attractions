@@ -2,7 +2,7 @@
 <ul class="attractions">
     <li *ngFor="let attraction of attractions" (click)="onSelect(attraction)" [class.selected]="attraction === selectedAttraction">
         <span class="attraction-element">
-            <span class="badge">{{attraction.id}}</span> {{attraction.name}}
+            <span class="badge">{{attraction.attractionId}}</span> {{attraction.name}}
         </span>
         <button class="delete-button" (click)="delete(attraction, $event)">Delete</button>
     </li>
