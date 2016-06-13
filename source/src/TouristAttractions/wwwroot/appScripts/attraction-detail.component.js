@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var attraction_1 = require('./attraction');
+var section_1 = require('./section');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var attraction_service_1 = require('./attraction.service');
 var AttractionDetailComponent = (function () {
@@ -41,6 +42,12 @@ var AttractionDetailComponent = (function () {
             _this.goBack(attraction);
         })
             .catch(function (error) { return _this.error = error; }); // TODO: Display error message
+    };
+    AttractionDetailComponent.prototype.addSection = function () {
+        this.attraction.sections.push(new section_1.Section());
+    };
+    AttractionDetailComponent.prototype.deleteSection = function (index) {
+        this.attraction.sections.splice(index);
     };
     AttractionDetailComponent.prototype.goBack = function (savedAttraction) {
         if (savedAttraction === void 0) { savedAttraction = null; }

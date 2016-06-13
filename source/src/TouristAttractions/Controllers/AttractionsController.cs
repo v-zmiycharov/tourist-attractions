@@ -12,16 +12,16 @@ namespace TouristAttractions.Controllers
     {
         private static List<Attraction> Attractions = new List<Attraction>()
         {
-            new Attraction() { Id = 11, Name = "Mr. Valentin" },
-            new Attraction() { Id = 12, Name = "Narco" },
-            new Attraction() { Id = 13, Name = "Bombasto" },
-            new Attraction() { Id = 14, Name = "Celeritas" },
-            new Attraction() { Id = 15, Name = "Magneta" },
-            new Attraction() { Id = 16, Name = "RubberMan" },
-            new Attraction() { Id = 17, Name = "Dynama" },
-            new Attraction() { Id = 18, Name = "Dr IQ" },
-            new Attraction() { Id = 19, Name = "Magma" },
-            new Attraction() { Id = 20, Name = "Tornado" }
+            new Attraction(11, "Eiffel Tower", 48.8583736, 2.2922926, "Paris", "France", new List<Section>() { new Section(1, "Description", "The best tower ever") } ),
+            new Attraction(12, "Colosseum", 41.8902142, 12.4900422, "Italy", "Rome", new List<Section>() { new Section(1, "Description", "An ancient monument") } ),
+            new Attraction(13, "Plitvice Lakes National Park", 44.8654004, 15.5798232, "", "Croatia", new List<Section>() { new Section(1, "Interesting", "The most famouse place in the whole country") } ),
+            new Attraction(14, "Burj Khalifa", 25.1972018,55.2721877, "Dubai", "OAE", new List<Section>() { new Section(1, "Important", "The tallest building in the world") } ),
+            new Attraction(15, "La Sagrada Familia", 41.4036339, 2.1721671, "Barcelona", "Spain", new List<Section>() { new Section(1, "Interesting", "It is not finished yet. In 2022 it will be done.") } ),
+            new Attraction(16, "Charles Bridge", 50.086441,14.4116764, "Prague", "Czech Republic", new List<Section>() { new Section(1, "", "") } ),
+            new Attraction(17, "Cologne Cathedral", 50.9412818, 6.9560927, "Cologne", "Germany", new List<Section>() { new Section(1, "", "") } ),
+            new Attraction(18, "Cathedral Saint Alexandar Nevski", 42.6961218,23.3292795, "Sofia", "Bulgaria", new List<Section>() { new Section(1, "", "") } ),
+            new Attraction(19, "Empire State Building", 40.7486946, -73.9903013, "New York", "USA", new List<Section>() { new Section(1, "", "") } ),
+            new Attraction(20, "Potala Palace", 29.6554988, 91.1163905, "Tibet", "China", new List<Section>() { new Section(1, "", "") } ),
         };
 
         // GET api/attractions
@@ -58,7 +58,7 @@ namespace TouristAttractions.Controllers
         {
             Attraction attractionToUpdate = Attractions.FirstOrDefault(e => e.Id == id);
 
-            attractionToUpdate.Name = attraction.Name;
+            attractionToUpdate.Update(attraction);
         }
 
         // DELETE api/attractions/5

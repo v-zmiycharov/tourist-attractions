@@ -7,6 +7,39 @@
         <label>name: </label>
         <input [(ngModel)]="attraction.name" placeholder="name" />
     </div>
-    <button (click)="goBack()">Back</button>
+    <div>
+        <label>longitude: </label>
+        <input [(ngModel)]="attraction.longitude" placeholder="longitude" />
+    </div>
+    <div>
+        <label>latitude: </label>
+        <input [(ngModel)]="attraction.latitude" placeholder="latitude" />
+    </div>
+    <div>
+        <label>city: </label>
+        <input [(ngModel)]="attraction.city" placeholder="city" />
+    </div>
+    <div>
+        <label>country: </label>
+        <input [(ngModel)]="attraction.country" placeholder="country" />
+    </div>
+
+    <h3>Sections</h3>
+    <div *ngFor="let section of attraction.sections; #i = index">
+        <div>
+            <label>header: </label>
+            <input [(ngModel)]="section.header" placeholder="section header" />
+        </div>
+        <div>
+            <label>Content: </label>
+            <textarea [(ngModel)]="section.content" placeholder="section content"></textarea>
+        </div>
+        <button class="delete-button" (click)="deleteSection(i)">Delete</button>
+    </div>
+    <button class="add-button" (click)="addSection()">Add</button>
+
+    <div class="clearfix"></div>
+
+    <button (click)="goBack()">Back</button> 
     <button (click)="save()">Save</button>
 </div>

@@ -1,5 +1,6 @@
 ﻿import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Attraction } from './attraction';
+import { Section } from './section';
 import { RouteParams } from '@angular/router-deprecated';
 import { AttractionService } from './attraction.service';
 
@@ -39,7 +40,15 @@ export class AttractionDetailComponent implements OnInit {
             })
             .catch(error => this.error = error); // TODO: Display error message
     }
-    
+
+    addSection() {
+        this.attraction.sections.push(new Section());
+    }
+
+    deleteSection(index: number) {
+        this.attraction.sections.splice(index);
+    }
+
     goBack(savedAttraction: Attraction = null) {
         this.close.emit(savedAttraction);
         if (this.navigated) { window.history.back(); }
