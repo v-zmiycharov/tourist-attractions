@@ -43,7 +43,7 @@ namespace TouristAttractions
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             // Repos
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IAttractionRepository, AttractionRepository>();
 
             // Add framework services.
