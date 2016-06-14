@@ -42,6 +42,10 @@ export class AttractionDetailComponent implements OnInit {
     }
 
     addSection() {
+        if (this.attraction.sections == null) {
+            this.attraction.sections = [];
+        }
+
         this.attraction.sections.push(new Section());
     }
 

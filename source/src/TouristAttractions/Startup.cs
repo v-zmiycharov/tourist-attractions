@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
 using TouristAttractions.Entities;
 using Microsoft.EntityFrameworkCore;
+using TouristAttractions.Repositories;
 
 namespace TouristAttractions
 {
@@ -40,7 +41,11 @@ namespace TouristAttractions
             // Add framework services.
             services.AddDbContext<AttractionsDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            
+
+            // Repos
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IAttractionRepository, AttractionRepository>();
+
             // Add framework services.
             services.AddMvc().AddMvcOptions(options =>
             {

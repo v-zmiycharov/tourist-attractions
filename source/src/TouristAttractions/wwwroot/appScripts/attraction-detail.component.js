@@ -44,6 +44,9 @@ var AttractionDetailComponent = (function () {
             .catch(function (error) { return _this.error = error; }); // TODO: Display error message
     };
     AttractionDetailComponent.prototype.addSection = function () {
+        if (this.attraction.sections == null) {
+            this.attraction.sections = [];
+        }
         this.attraction.sections.push(new section_1.Section());
     };
     AttractionDetailComponent.prototype.deleteSection = function (index) {
