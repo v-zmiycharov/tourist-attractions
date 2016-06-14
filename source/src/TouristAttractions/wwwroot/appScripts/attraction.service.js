@@ -76,4 +76,3 @@ var AttractionService = (function () {
     return AttractionService;
 }());
 exports.AttractionService = AttractionService;
-//# sourceMappingURL=attraction.service.js.map
