@@ -78,3 +78,4 @@ var AttractionDetailComponent = (function () {
     return AttractionDetailComponent;
 }());
 exports.AttractionDetailComponent = AttractionDetailComponent;
+//# sourceMappingURL=attraction-detail.component.js.map

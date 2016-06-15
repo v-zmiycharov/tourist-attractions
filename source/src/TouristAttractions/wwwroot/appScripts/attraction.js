@@ -7,3 +7,4 @@ var Attraction = (function () {
     return Attraction;
 }());
 exports.Attraction = Attraction;
+//# sourceMappingURL=attraction.js.map

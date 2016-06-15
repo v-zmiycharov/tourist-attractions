@@ -9,13 +9,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var common_1 = require('@angular/common');
+var http_1 = require('@angular/http');
 var LoginComponent = (function () {
-    function LoginComponent() {
+    function LoginComponent(router, http) {
+        this.router = router;
+        this.http = http;
     }
+    LoginComponent.prototype.login = function (event, username, password) {
+        var _this = this;
+        event.preventDefault();
+        var body = JSON.stringify({ username: username, password: password });
+        var contentHeaders = new http_1.Headers({
+            'Content-Type': 'application/json'
+        });
+        this.http.post('/api/login', body, { headers: contentHeaders })
+            .subscribe(function (response) {
+            localStorage.setItem('jwt', response.json().id_token);
+            _this.router.parent.navigateByUrl('/dashboard');
+        }, function (error) {
+            alert(error.text());
+            console.log(error.text());
+        });
+    };
+    LoginComponent.prototype.signup = function (event) {
+        event.preventDefault();
+        this.router.parent.navigateByUrl('/signup');
+    };
     LoginComponent = __decorate([
-        core_1.Component({}), 
-        __metadata('design:paramtypes', [])
+        core_1.Component({
+            selector: 'login',
+            directives: [router_deprecated_1.RouterLink, common_1.CORE_DIRECTIVES, common_1.FORM_DIRECTIVES],
+            templateUrl: 'appTemplates/login.component.html',
+        }), 
+        __metadata('design:paramtypes', [router_deprecated_1.Router, http_1.Http])
     ], LoginComponent);
     return LoginComponent;
 }());
 exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map

@@ -70,7 +70,7 @@ export class AppComponent {
         // We get the JWT from localStorage
         this.jwt = localStorage.getItem('jwt');
         // We also store the decoded JSON from this JWT
-        this.decodedJwt = this.jwt && window.jwt_decode(this.jwt);
+        // this.decodedJwt = this.jwt && window.jwt_decode(this.jwt);
     }
 
     title = 'Tour of Attractions';
