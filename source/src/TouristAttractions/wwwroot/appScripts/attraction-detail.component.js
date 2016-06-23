@@ -70,8 +70,7 @@ var AttractionDetailComponent = (function () {
     AttractionDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-attraction-detail',
-            templateUrl: 'appTemplates/attraction-detail.component.html',
-            styleUrls: ['appStyles/attraction-detail.component.css']
+            templateUrl: 'appTemplates/attraction-detail.component.html'
         }), 
         __metadata('design:paramtypes', [attraction_service_1.AttractionService, router_deprecated_1.RouteParams])
     ], AttractionDetailComponent);

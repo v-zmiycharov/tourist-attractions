@@ -22,7 +22,6 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             template: "\n        <h1>{{title}}</h1>\n        <nav>\n            <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n            <a [routerLink]=\"['Attractions']\">Attractions</a>\n        </nav>\n        <router-outlet></router-outlet>\n    ",
-            styleUrls: ['appStyles/app.component.css'],
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,

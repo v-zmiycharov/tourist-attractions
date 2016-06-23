@@ -56,7 +56,6 @@ var AttractionsComponent = (function () {
         core_1.Component({
             selector: 'my-attractions',
             templateUrl: 'appTemplates/attractions.component.html',
-            styleUrls: ['appStyles/attractions.component.css'],
             directives: [attraction_detail_component_1.AttractionDetailComponent]
         }), 
         __metadata('design:paramtypes', [router_deprecated_1.Router, attraction_service_1.AttractionService])

@@ -6,8 +6,7 @@ import { AttractionService } from './attraction.service';
 
 @Component({
     selector: 'my-attraction-detail',
-    templateUrl: 'appTemplates/attraction-detail.component.html',
-    styleUrls: ['appStyles/attraction-detail.component.css']
+    templateUrl: 'appTemplates/attraction-detail.component.html'
 })
 
 export class AttractionDetailComponent implements OnInit {

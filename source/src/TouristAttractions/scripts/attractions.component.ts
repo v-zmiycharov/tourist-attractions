@@ -7,7 +7,6 @@ import { AttractionDetailComponent } from './attraction-detail.component';
 @Component({
     selector: 'my-attractions',
     templateUrl: 'appTemplates/attractions.component.html',
-    styleUrls: ['appStyles/attractions.component.css'],
     directives: [AttractionDetailComponent]
 })
 

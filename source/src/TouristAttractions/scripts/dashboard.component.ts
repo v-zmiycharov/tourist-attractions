@@ -7,8 +7,7 @@ import { Router } from '@angular/router-deprecated';
 
 @Component({
     selector: 'my-dashboard',
-    templateUrl: 'appTemplates/dashboard.component.html',
-    styleUrls: ['appStyles/dashboard.component.css']
+    templateUrl: 'appTemplates/dashboard.component.html'
 })
 
 export class DashboardComponent implements OnInit {
