@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TouristAttractions.Entities;
 using TouristAttractions.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace TouristAttractions.Controllers
 {
@@ -13,10 +14,10 @@ namespace TouristAttractions.Controllers
     {
         private IAttractionRepository _attractionRepository;
 
-        public AttractionsController(IUnitOfWork unitOfWork, IAttractionRepository attractionsRepository)
+        public AttractionsController(IUnitOfWork unitOfWork, IAttractionRepository attractionRepository)
             : base(unitOfWork)
         {
-            _attractionRepository = attractionsRepository;
+            _attractionRepository = attractionRepository;
         }
 
         // GET api/attractions
@@ -30,7 +31,9 @@ namespace TouristAttractions.Controllers
         [HttpGet("{id}")]
         public Attraction Get(int id)
         {
-            return _attractionRepository.GetByID(id);
+            return _attractionRepository.GetByID(id)
+                        .Include(e => e.Sections)
+                        .FirstOrDefault();
         }
 
         // POST api/attractions
@@ -51,7 +54,7 @@ namespace TouristAttractions.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]Attraction attraction)
         {
-            Attraction attractionToUpdate = _attractionRepository.GetByID(id);
+            Attraction attractionToUpdate = _attractionRepository.GetSingleByID(id);
 
             attractionToUpdate.Update(attraction);
 

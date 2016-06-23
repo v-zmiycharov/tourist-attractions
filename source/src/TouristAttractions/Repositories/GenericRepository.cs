@@ -13,7 +13,9 @@ namespace TouristAttractions.Repositories
     {
         IQueryable<TEntity> Get();
 
-        TEntity GetByID(object id);
+        TEntity GetSingleByID(object id);
+
+        IQueryable<TEntity> GetByID(object id);
 
         void Insert(TEntity entity);
 
@@ -32,7 +34,7 @@ namespace TouristAttractions.Repositories
         {
             this.dbSet = this.UnitOfWork.context.Set<TEntity>();
         }
-
+        
         public virtual IQueryable<TEntity> Get()
         {
             IQueryable<TEntity> query = dbSet;
@@ -40,11 +42,16 @@ namespace TouristAttractions.Repositories
             return query;
         }
 
-        public virtual TEntity GetByID(object id)
+        public virtual TEntity GetSingleByID(object id)
+        {
+            return dbSet.FindSingle(id);
+        }
+
+        public virtual IQueryable<TEntity> GetByID(object id)
         {
             return dbSet.Find(id);
         }
-
+        
         public virtual void Insert(TEntity entity)
         {
             dbSet.Add(entity);
@@ -52,7 +59,7 @@ namespace TouristAttractions.Repositories
 
         public virtual void Delete(object id)
         {
-            TEntity entityToDelete = dbSet.Find(id);
+            TEntity entityToDelete = dbSet.FindSingle(id);
             Delete(entityToDelete);
         }
 

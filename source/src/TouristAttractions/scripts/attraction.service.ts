@@ -25,8 +25,13 @@ export class AttractionService {
 
 
     getAttraction(id: number) {
-        return this.getAttractions()
-            .then(attractions => attractions.filter(attraction => attraction.attractionId === id)[0]);
+        let url = `${this.attractionsUrl}/${id}`;
+
+        return this.http
+            .get(url)
+            .toPromise()
+            .then(response => response.json())
+            .catch(this.handleError);
     }
     
     // Add new Attraction
@@ -44,8 +49,9 @@ export class AttractionService {
 
     // Update existing Attraction
     private put(attraction: Attraction) {
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        let headers = new Headers({
+            'Content-Type': 'application/json'
+        });
 
         let url = `${this.attractionsUrl}/${attraction.attractionId}`;
 
@@ -58,8 +64,9 @@ export class AttractionService {
 
     // Delete attraction
     delete(attraction: Attraction) {
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+        let headers = new Headers({
+            'Content-Type': 'application/json'
+        });
 
         let url = `${this.attractionsUrl}/${attraction.attractionId}`;
 

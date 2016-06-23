@@ -27,8 +27,12 @@ var AttractionService = (function () {
         return Promise.reject(error.message || error);
     };
     AttractionService.prototype.getAttraction = function (id) {
-        return this.getAttractions()
-            .then(function (attractions) { return attractions.filter(function (attraction) { return attraction.attractionId === id; })[0]; });
+        var url = this.attractionsUrl + "/" + id;
+        return this.http
+            .get(url)
+            .toPromise()
+            .then(function (response) { return response.json(); })
+            .catch(this.handleError);
     };
     // Add new Attraction
     AttractionService.prototype.post = function (attraction) {
@@ -43,8 +47,9 @@ var AttractionService = (function () {
     };
     // Update existing Attraction
     AttractionService.prototype.put = function (attraction) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
+        var headers = new http_1.Headers({
+            'Content-Type': 'application/json'
+        });
         var url = this.attractionsUrl + "/" + attraction.attractionId;
         return this.http
             .put(url, JSON.stringify(attraction), { headers: headers })
@@ -54,8 +59,9 @@ var AttractionService = (function () {
     };
     // Delete attraction
     AttractionService.prototype.delete = function (attraction) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
+        var headers = new http_1.Headers({
+            'Content-Type': 'application/json'
+        });
         var url = this.attractionsUrl + "/" + attraction.attractionId;
         return this.http
             .delete(url, headers)
