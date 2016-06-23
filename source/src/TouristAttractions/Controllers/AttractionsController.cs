@@ -13,11 +13,13 @@ namespace TouristAttractions.Controllers
     public class AttractionsController : BaseController
     {
         private IAttractionRepository _attractionRepository;
+        private ISectionRepository _sectionRepository;
 
-        public AttractionsController(IUnitOfWork unitOfWork, IAttractionRepository attractionRepository)
+        public AttractionsController(IUnitOfWork unitOfWork, IAttractionRepository attractionRepository, ISectionRepository sectionRepository)
             : base(unitOfWork)
         {
             _attractionRepository = attractionRepository;
+            _sectionRepository = sectionRepository;
         }
 
         // GET api/attractions
@@ -57,6 +59,7 @@ namespace TouristAttractions.Controllers
             Attraction attractionToUpdate = _attractionRepository.GetSingleByID(id);
 
             attractionToUpdate.Update(attraction);
+            _sectionRepository.UpdateAttractionSections(id, attraction.Sections);
 
             _unitOfWork.Save();
         }

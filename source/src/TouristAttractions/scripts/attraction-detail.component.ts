@@ -50,7 +50,7 @@ export class AttractionDetailComponent implements OnInit {
     }
 
     deleteSection(index: number) {
-        this.attraction.sections.splice(index);
+        this.attraction.sections.splice(index, 1);
     }
 
     goBack(savedAttraction: Attraction = null) {

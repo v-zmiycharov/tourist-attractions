@@ -43,15 +43,6 @@ namespace TouristAttractions.Entities
             this.Latitude = attraction.Latitude;
             this.City = attraction.City;
             this.Country = attraction.Country;
-            this.Sections = attraction.Sections;
-
-            if (this.Sections != null)
-            {
-                for (int i = 0; i < this.Sections.Count; i++)
-                {
-                    this.Sections[i].OrderNum = i + 1;
-                }
-            }
         }
     }
 }

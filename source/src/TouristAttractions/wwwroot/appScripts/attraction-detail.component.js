@@ -50,7 +50,7 @@ var AttractionDetailComponent = (function () {
         this.attraction.sections.push(new section_1.Section());
     };
     AttractionDetailComponent.prototype.deleteSection = function (index) {
-        this.attraction.sections.splice(index);
+        this.attraction.sections.splice(index, 1);
     };
     AttractionDetailComponent.prototype.goBack = function (savedAttraction) {
         if (savedAttraction === void 0) { savedAttraction = null; }

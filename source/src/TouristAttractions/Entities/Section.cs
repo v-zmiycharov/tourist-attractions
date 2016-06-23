@@ -21,5 +21,12 @@ namespace TouristAttractions.Entities
             this.Header = header;
             this.Content = content;
         }
+        
+        public void Update(Section section)
+        {
+            this.OrderNum = section.OrderNum;
+            this.Header = section.Header;
+            this.Content = section.Content;
+        }
     }
 }

@@ -45,6 +45,7 @@ namespace TouristAttractions
             // Repos
             services.AddSingleton<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IAttractionRepository, AttractionRepository>();
+            services.AddTransient<ISectionRepository, SectionRepository>();
 
             // Add framework services.
             services.AddMvc().AddMvcOptions(options =>
