@@ -7,9 +7,10 @@
     "noImplicitAny": false,
     "outDir": "../wwwroot/appScripts/",
     "removeComments": false,
-    "sourceMap": true,
     "target": "es5",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "inlineSourceMap": true,
+    "inlineSources": true
   },
   "exclude": [
     "node_modules",
