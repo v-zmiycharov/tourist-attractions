@@ -14,7 +14,7 @@
         'rxjs': { defaultExtension: 'js' },
         'angular2-in-memory-web-api': { defaultExtension: 'js' },
     };
-
+    
     var packageNames = [
       '@angular/common',
       '@angular/compiler',
@@ -36,11 +36,7 @@
     var config = {
         map: map,
         packages: packages
-    }
-
-    // filterSystemConfig - index.html's chance to modify config before we register it.
-    if (global.filterSystemConfig) { global.filterSystemConfig(config); }
-
+    };
     System.config(config);
 
 })(this);

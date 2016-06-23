@@ -1,4 +1,4 @@
-﻿<form *ngIf="attraction">
+﻿<div *ngIf="attraction">
     <h2>{{attraction.name}}</h2>
     <div class="row">
         <div class="form-group col-md-4">
@@ -52,4 +52,4 @@
 
     <button (click)="goBack()" class="btn btn-default">Back</button>
     <button (click)="save()" class="btn btn-primary">Save</button>
-</form>
+</div>
