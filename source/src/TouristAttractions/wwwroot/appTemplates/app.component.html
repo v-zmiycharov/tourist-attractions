@@ -1,19 +1,9 @@
 ﻿<div class="container">
-    <div class="header clearfix">
-        <nav>
-            <ul class="nav nav-pills pull-right">
-                <li><a [routerLink]="['Dashboard']">Dashboard</a></li>
-                <li><a [routerLink]="['Attractions']">Attractions</a></li>
-            </ul>
-        </nav>
-        <h3 class="text-muted">{{title}}</h3>
-    </div>
+    <app-header></app-header>
 
     <div class="content-wrapper">
         <router-outlet></router-outlet>
     </div>
-
-    <footer class="footer">
-        <p>© 2016 Tourist Attractions</p>
-    </footer>
+    
+    <app-footer></app-footer>
 </div>

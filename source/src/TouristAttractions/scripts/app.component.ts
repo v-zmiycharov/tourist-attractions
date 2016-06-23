@@ -1,5 +1,7 @@
 ﻿import { Component }       from '@angular/core';
 import { AttractionService }     from './attraction.service';
+import { AppHeaderComponent } from './app-header.component';
+import { AppFooterComponent } from './app-footer.component';
 import { AttractionsComponent } from './attractions.component';
 import { DashboardComponent } from './dashboard.component';
 import { AttractionDetailComponent } from './attraction-detail.component';
@@ -8,7 +10,11 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 @Component({
     selector: 'my-app',
     templateUrl: 'appTemplates/app.component.html',
-    directives: [ROUTER_DIRECTIVES],
+    directives: [
+        ROUTER_DIRECTIVES,
+        AppHeaderComponent,
+        AppFooterComponent
+    ],
     providers: [
         ROUTER_PROVIDERS,
         AttractionService
@@ -34,6 +40,4 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
     },
 ])
 
-export class AppComponent {
-    title = 'Tour of Attractions';
-}
+export class AppComponent {}

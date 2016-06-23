@@ -1,0 +1,9 @@
+﻿<div class="header clearfix">
+    <nav>
+        <ul class="nav nav-pills pull-right">
+            <li [class.active]="isActiveRoute(['Dashboard'])"><a [routerLink]="['Dashboard']">Dashboard</a></li>
+            <li [class.active]="isActiveRoute(['Attractions'])"><a [routerLink]="['Attractions']">Attractions</a></li>
+        </ul>
+    </nav>
+    <h3 class="text-muted">{{title}}</h3>
+</div>
