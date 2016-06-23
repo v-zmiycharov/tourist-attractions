@@ -14,9 +14,27 @@ namespace TouristAttractions.Repositories
 
     public class AttractionRepository : GenericRepository<Attraction>, IAttractionRepository 
     {
-        public AttractionRepository(IUnitOfWork uow)
+        private ISectionRepository _sectionRepository;
+
+        public AttractionRepository(IUnitOfWork uow, ISectionRepository sectionRepository)
             : base(uow)
         {
+            _sectionRepository = sectionRepository;
+        }
+
+        override public void Delete(object id)
+        {
+            var sections = _sectionRepository.FindByAttractionId((int)id).ToList();
+
+            if(sections != null)
+            {
+                foreach(var section in sections)
+                {
+                    _sectionRepository.Delete(section.SectionId);
+                }
+            }
+
+            base.Delete(id);
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿<h3>Top Attractions</h3>
-<div class="grid grid-pad">
-  <div *ngFor="let attraction of attractions" (click)="gotoDetail(attraction)" class="col-1-4">
-    <div class="module attraction">
-      <h4>{{attraction.name}}</h4>
-    </div>
-  </div>
+<div class="dashboard-links">
+    <button type="button" *ngFor="let attraction of attractions" class="btn btn-default btn-md active" (click)="gotoDetail(attraction)">{{attraction.name}}</button>
 </div>

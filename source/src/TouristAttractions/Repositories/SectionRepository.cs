@@ -11,6 +11,7 @@ namespace TouristAttractions.Repositories
     public interface ISectionRepository : IGenericRepository<Section>
     {
         void UpdateAttractionSections(int attractionId, List<Section> sections);
+        IQueryable<Section> FindByAttractionId(int attractionId);
     }
 
     public class SectionRepository : GenericRepository<Section>, ISectionRepository
@@ -50,6 +51,11 @@ namespace TouristAttractions.Repositories
             {
                 dbSet.Add(newSec);
             }
+        }
+
+        public IQueryable<Section> FindByAttractionId(int attractionId)
+        {
+            return dbSet.Where(e => e.AttractionId == attractionId);
         }
     }
 }

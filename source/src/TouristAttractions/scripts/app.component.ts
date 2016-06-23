@@ -7,14 +7,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 
 @Component({
     selector: 'my-app',
-    template: `
-        <h1>{{title}}</h1>
-        <nav>
-            <a [routerLink]="['Dashboard']">Dashboard</a>
-            <a [routerLink]="['Attractions']">Attractions</a>
-        </nav>
-        <router-outlet></router-outlet>
-    `,
+    templateUrl: 'appTemplates/app.component.html',
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,

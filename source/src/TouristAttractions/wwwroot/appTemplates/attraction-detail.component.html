@@ -1,45 +1,55 @@
-﻿<div *ngIf="attraction">
-    <h2>{{attraction.name}} details!</h2>
-    <div>
-        <label>id: </label>{{attraction.attractionId}}
+﻿<form *ngIf="attraction">
+    <h2>{{attraction.name}}</h2>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>name: </label>
+            <input [(ngModel)]="attraction.name" class="form-control" />
+        </div>
     </div>
-    <div>
-        <label>name: </label>
-        <input [(ngModel)]="attraction.name" placeholder="name" />
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>longitude: </label>
+            <input [(ngModel)]="attraction.longitude" class="form-control" />
+        </div>
     </div>
-    <div>
-        <label>longitude: </label>
-        <input [(ngModel)]="attraction.longitude" placeholder="longitude" />
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>latitude: </label>
+            <input [(ngModel)]="attraction.latitude" class="form-control" />
+        </div>
     </div>
-    <div>
-        <label>latitude: </label>
-        <input [(ngModel)]="attraction.latitude" placeholder="latitude" />
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>city: </label>
+            <input [(ngModel)]="attraction.city" class="form-control" />
+        </div>
     </div>
-    <div>
-        <label>city: </label>
-        <input [(ngModel)]="attraction.city" placeholder="city" />
-    </div>
-    <div>
-        <label>country: </label>
-        <input [(ngModel)]="attraction.country" placeholder="country" />
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>country: </label>
+            <input [(ngModel)]="attraction.country" class="form-control" />
+        </div>
     </div>
 
     <h3>Sections</h3>
-    <div *ngFor="let section of attraction.sections; #i = index">
-        <div>
+    <div *ngFor="let section of attraction.sections; let i = index" class="row">
+        <div class="form-group col-md-4">
             <label>header: </label>
-            <input [(ngModel)]="section.header" placeholder="section header" />
+            <input [(ngModel)]="section.header" class="form-control" />
         </div>
-        <div>
+        <div class="form-group col-md-4">
             <label>Content: </label>
-            <textarea [(ngModel)]="section.content" placeholder="section content"></textarea>
+            <textarea [(ngModel)]="section.content" class="form-control"></textarea>
         </div>
-        <button class="delete-button" (click)="deleteSection(i)">Delete</button>
+        <div class="form-group col-md-4">
+            <button class="btn btn-danger" (click)="deleteSection(i)">Delete</button>
+        </div>
     </div>
-    <button class="add-button" (click)="addSection()">Add</button>
 
-    <div class="clearfix"></div>
+    <button class="btn btn-success" (click)="addSection()">Add section</button>
 
-    <button (click)="goBack()">Back</button> 
-    <button (click)="save()">Save</button>
-</div>
+    <div class="clearfix" style="margin-top: 20px; margin-bottom: 20px;"></div>
+
+    <button (click)="goBack()" class="btn btn-default">Back</button>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</form>

@@ -1,19 +1,21 @@
-﻿<h2>My Attractions</h2>
-<ul class="attractions">
-    <li *ngFor="let attraction of attractions" (click)="onSelect(attraction)" [class.selected]="attraction === selectedAttraction">
-        <span class="attraction-element">
-            <span class="badge">{{attraction.attractionId}}</span> {{attraction.name}}
-        </span>
-        <button class="delete-button" (click)="delete(attraction, $event)">Delete</button>
+﻿<h2>Attractions list</h2>
+
+<ul class="list-group attractions-list">
+    <li *ngFor="let attraction of attractions" [class.active]="attraction === selectedAttraction" class="list-group-item clearfix">
+        <a (click)="onSelect(attraction)">{{attraction.name}}</a>
+        <button class="btn btn-danger btn-sm pull-right" (click)="delete(attraction, $event)">Delete</button>
     </li>
 </ul>
-<button (click)="addAttraction()">Add New Attraction</button>
+
+<button (click)="addAttraction()" class="btn btn-success">Add New Attraction</button>
+
 <div *ngIf="addingAttraction">
     <my-attraction-detail (close)="close($event)"></my-attraction-detail>
 </div>
+
 <div *ngIf="selectedAttraction">
-    <h2>
+    <h3>
         {{selectedAttraction.name | uppercase}} is my attraction
-    </h2>
-    <button (click)="gotoDetail()">View Details</button>
+    </h3>
+    <button (click)="gotoDetail()" class="btn btn-default">View Details</button>
 </div>

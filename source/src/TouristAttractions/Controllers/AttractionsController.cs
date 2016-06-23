@@ -68,7 +68,7 @@ namespace TouristAttractions.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _attractionRepository.Delete(_attractionRepository.GetByID(id));
+            _attractionRepository.Delete(id);
             _unitOfWork.Save();
         }
     }

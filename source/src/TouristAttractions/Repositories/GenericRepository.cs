@@ -21,8 +21,6 @@ namespace TouristAttractions.Repositories
 
         void Delete(object id);
 
-        void Delete(TEntity entityToDelete);
-
         void Update(TEntity entityToUpdate);
     }
 
@@ -63,7 +61,7 @@ namespace TouristAttractions.Repositories
             Delete(entityToDelete);
         }
 
-        public virtual void Delete(TEntity entityToDelete)
+        private void Delete(TEntity entityToDelete)
         {
             if (this.UnitOfWork.context.Entry(entityToDelete).State == EntityState.Detached)
             {
