@@ -2,7 +2,8 @@
 
 @Component({
     selector: 'app-footer',
-    templateUrl: 'appTemplates/app-footer.component.html'
+    moduleId: module.id,
+    templateUrl: 'app-footer.component.html'
 })
 
 export class AppFooterComponent { }

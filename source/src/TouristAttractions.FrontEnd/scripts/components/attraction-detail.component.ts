@@ -6,7 +6,8 @@ import { AttractionService } from '../services/attraction.service';
 
 @Component({
     selector: 'my-attraction-detail',
-    templateUrl: 'appTemplates/attraction-detail.component.html'
+    moduleId: module.id,
+    templateUrl: 'attraction-detail.component.html'
 })
 
 export class AttractionDetailComponent implements OnInit {

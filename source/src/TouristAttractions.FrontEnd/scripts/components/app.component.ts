@@ -9,7 +9,8 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'appTemplates/app.component.html',
+    moduleId: module.id,
+    templateUrl: 'app.component.html',
     directives: [
         ROUTER_DIRECTIVES,
         AppHeaderComponent,

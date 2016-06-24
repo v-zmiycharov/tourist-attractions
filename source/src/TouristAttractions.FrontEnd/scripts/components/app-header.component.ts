@@ -3,7 +3,8 @@ import { Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-dep
 
 @Component({
     selector: 'app-header',
-    templateUrl: 'appTemplates/app-header.component.html',
+    moduleId: module.id,
+    templateUrl: 'app-header.component.html',
     directives: [
         ROUTER_DIRECTIVES
     ]

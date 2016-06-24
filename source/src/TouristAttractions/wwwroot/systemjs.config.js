@@ -2,7 +2,7 @@
 
     // map tells the System loader where to look for things
     var map = {
-        'app': 'appScripts', // 'dist',
+        'app': 'scripts', // 'dist',
         'rxjs': 'libs/rxjs',
         'angular2-in-memory-web-api': 'libs/angular2-in-memory-web-api',
         '@angular': 'libs/@angular'

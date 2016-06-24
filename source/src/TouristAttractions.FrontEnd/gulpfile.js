@@ -37,28 +37,24 @@ gulp.task("contentAndHtml", () => {
     ]).pipe(gulp.dest('../TouristAttractions/wwwroot/content'));
 
     gulp.src([
-        '*.html'
+        '**/*.html'
     ]).pipe(gulp.dest('../TouristAttractions/wwwroot'));
-
-    gulp.src([
-        'appTemplates/*.html'
-    ]).pipe(gulp.dest('../TouristAttractions/wwwroot/appTemplates'));
 });
 
 var tsProject = ts.createProject('scripts/tsconfig.json');
 gulp.task('ts', function (done) {
     //var tsResult = tsProject.src()
     var tsResult = gulp.src([
-            "scripts/*.ts"
+            "scripts/**/*.ts"
     ])
         .pipe(ts(tsProject), undefined, ts.reporter.fullReporter());
-    return tsResult.js.pipe(gulp.dest('../TouristAttractions/wwwroot/appScripts'));
+    return tsResult.js.pipe(gulp.dest('../TouristAttractions/wwwroot/scripts'));
 });
 
 gulp.task('watch', ['watch.ts']);
 
 gulp.task('watch.ts', ['ts'], function () {
-    return gulp.watch('scripts/*.ts', ['ts']);
+    return gulp.watch('scripts/**/*.ts', ['ts']);
 });
 
-gulp.task('default', ['scriptsNStyles', 'watch']);
+gulp.task('default', ['scriptsNStyles', 'contentAndHtml', 'watch']);
