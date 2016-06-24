@@ -2,7 +2,7 @@
   "_args": [
     [
       "@angular/platform-browser-dynamic@2.0.0-rc.3",
-      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions"
+      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions.FrontEnd"
     ]
   ],
   "_from": "@angular/platform-browser-dynamic@2.0.0-rc.3",
@@ -35,7 +35,7 @@
   "_shasum": "badd6e2b1d2bf710182a321a8f3fbc967ef6d5d0",
   "_shrinkwrap": null,
   "_spec": "@angular/platform-browser-dynamic@2.0.0-rc.3",
-  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions",
+  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions.FrontEnd",
   "author": {
     "name": "angular"
   },

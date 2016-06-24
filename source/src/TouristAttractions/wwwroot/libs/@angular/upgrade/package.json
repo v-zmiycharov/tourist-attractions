@@ -2,7 +2,7 @@
   "_args": [
     [
       "@angular/upgrade@2.0.0-rc.3",
-      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions"
+      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions.FrontEnd"
     ]
   ],
   "_from": "@angular/upgrade@2.0.0-rc.3",
@@ -35,7 +35,7 @@
   "_shasum": "8e4c68a23cab073e9faecc28546bdbd0ad272238",
   "_shrinkwrap": null,
   "_spec": "@angular/upgrade@2.0.0-rc.3",
-  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions",
+  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions.FrontEnd",
   "author": {
     "name": "angular"
   },

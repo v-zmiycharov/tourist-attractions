@@ -2,7 +2,7 @@
   "_args": [
     [
       "@angular/router@3.0.0-alpha.7",
-      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions"
+      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions.FrontEnd"
     ]
   ],
   "_from": "@angular/router@3.0.0-alpha.7",
@@ -35,7 +35,7 @@
   "_shasum": "0c869c925f000677ff502db54b0000df84ad4718",
   "_shrinkwrap": null,
   "_spec": "@angular/router@3.0.0-alpha.7",
-  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions",
+  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions.FrontEnd",
   "author": {
     "name": "vsavkin"
   },

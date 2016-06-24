@@ -2,7 +2,7 @@
   "_args": [
     [
       "@angular/compiler@2.0.0-rc.3",
-      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions"
+      "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions.FrontEnd"
     ]
   ],
   "_from": "@angular/compiler@2.0.0-rc.3",
@@ -35,7 +35,7 @@
   "_shasum": "bba3da8419bec5103314326961971693ed1e1ee0",
   "_shrinkwrap": null,
   "_spec": "@angular/compiler@2.0.0-rc.3",
-  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions",
+  "_where": "D:\\Projects\\tourist-attractions\\source\\src\\TouristAttractions.FrontEnd",
   "author": {
     "name": "angular"
   },

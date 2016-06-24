@@ -5,7 +5,7 @@
     "module": "commonjs",
     "noEmitOnError": true,
     "noImplicitAny": false,
-    "outDir": "../wwwroot/appScripts/",
+    "outDir": "../../TouristAttractions/wwwroot/appScripts/",
     "removeComments": false,
     "target": "es5",
     "moduleResolution": "node",

@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 var clean = require('gulp-clean');
 
-var destPath = './wwwroot/libs/';
+var destPath = '../TouristAttractions/wwwroot/libs/';
 
 // Delete the dist directory
 gulp.task('clean', function () {
@@ -24,11 +24,11 @@ gulp.task("scriptsNStyles", () => {
     ], {
         cwd: "node_modules/**"
     })
-        .pipe(gulp.dest("./wwwroot/libs"));
+        .pipe(gulp.dest("../TouristAttractions/wwwroot/libs"));
 
     gulp.src([
         'node_modules/bootstrap/dist/css/bootstrap.css'
-    ]).pipe(gulp.dest('./wwwroot/libs/css'));
+    ]).pipe(gulp.dest('../TouristAttractions/wwwroot/libs/css'));
 });
 
 var tsProject = ts.createProject('scripts/tsconfig.json');
@@ -38,7 +38,7 @@ gulp.task('ts', function (done) {
             "scripts/*.ts"
     ])
         .pipe(ts(tsProject), undefined, ts.reporter.fullReporter());
-    return tsResult.js.pipe(gulp.dest('./wwwroot/appScripts'));
+    return tsResult.js.pipe(gulp.dest('../TouristAttractions/wwwroot/appScripts'));
 });
 
 gulp.task('watch', ['watch.ts']);
