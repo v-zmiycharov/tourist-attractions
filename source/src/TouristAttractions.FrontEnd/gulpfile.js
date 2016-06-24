@@ -31,6 +31,20 @@ gulp.task("scriptsNStyles", () => {
     ]).pipe(gulp.dest('../TouristAttractions/wwwroot/libs/css'));
 });
 
+gulp.task("contentAndHtml", () => {
+    gulp.src([
+        'content/**'
+    ]).pipe(gulp.dest('../TouristAttractions/wwwroot/content'));
+
+    gulp.src([
+        '*.html'
+    ]).pipe(gulp.dest('../TouristAttractions/wwwroot'));
+
+    gulp.src([
+        'appTemplates/*.html'
+    ]).pipe(gulp.dest('../TouristAttractions/wwwroot/appTemplates'));
+});
+
 var tsProject = ts.createProject('scripts/tsconfig.json');
 gulp.task('ts', function (done) {
     //var tsResult = tsProject.src()
