@@ -12,7 +12,8 @@
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0-rc2-final",
     "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0-rc2-final",
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final",
-    "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc2-final"
+    "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc2-final",
+    "TouristAttractions.BackEnd": "1.0.0-*"
   },
 
   "tools": {
