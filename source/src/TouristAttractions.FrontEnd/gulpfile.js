@@ -31,13 +31,17 @@ gulp.task("scriptsNStyles", () => {
     ]).pipe(gulp.dest('../TouristAttractions/wwwroot/libs/css'));
 });
 
-gulp.task("contentAndHtml", () => {
+gulp.task("staticFiles", () => {
     gulp.src([
         'content/**'
     ]).pipe(gulp.dest('../TouristAttractions/wwwroot/content'));
 
     gulp.src([
         '**/*.html'
+    ]).pipe(gulp.dest('../TouristAttractions/wwwroot'));
+
+    gulp.src([
+        '*.config.js'
     ]).pipe(gulp.dest('../TouristAttractions/wwwroot'));
 });
 
@@ -57,4 +61,4 @@ gulp.task('watch.ts', ['ts'], function () {
     return gulp.watch('scripts/**/*.ts', ['ts']);
 });
 
-gulp.task('default', ['scriptsNStyles', 'contentAndHtml', 'watch']);
+gulp.task('default', ['scriptsNStyles', 'staticFiles', 'watch']);
