@@ -1,7 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 
 import { Http, Response, Headers } from '@angular/http';
-import { Attraction }     from './attraction';
+import { Attraction }     from '../entities/attraction';
 
 import 'rxjs/add/operator/toPromise';
 

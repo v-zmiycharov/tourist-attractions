@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
-import { Attraction } from './attraction';
-import { AttractionService } from './attraction.service';
+import { Attraction } from '../entities/attraction';
+import { AttractionService } from '../services/attraction.service';
 
 import { Router } from '@angular/router-deprecated';
 

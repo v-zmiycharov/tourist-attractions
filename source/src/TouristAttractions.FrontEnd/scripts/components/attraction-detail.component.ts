@@ -1,8 +1,8 @@
 ﻿import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Attraction } from './attraction';
-import { Section } from './section';
+import { Attraction } from '../entities/attraction';
+import { Section } from '../entities/section';
 import { RouteParams } from '@angular/router-deprecated';
-import { AttractionService } from './attraction.service';
+import { AttractionService } from '../services/attraction.service';
 
 @Component({
     selector: 'my-attraction-detail',

@@ -1,5 +1,5 @@
 ﻿import { Component }       from '@angular/core';
-import { AttractionService }     from './attraction.service';
+import { AttractionService }     from '../services/attraction.service';
 import { AppHeaderComponent } from './app-header.component';
 import { AppFooterComponent } from './app-footer.component';
 import { AttractionsComponent } from './attractions.component';
